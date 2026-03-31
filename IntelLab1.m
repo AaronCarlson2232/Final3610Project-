@@ -12,7 +12,7 @@
 clear; clc; close all; % initialization
 
 % for PC:
-nb = nanobot('COM3', 115200, 'serial');
+nb = nanobot('COM7', 115200, 'serial');
 % for Mac:
 %nb = nanobot('/dev/cu.usbmodem14301', 115200, 'serial');
 

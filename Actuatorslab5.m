@@ -38,7 +38,7 @@ nb = nanobot('?', 115200, 'serial');
 % for consistency.  Record here which robot you are using for future 
 % reference.
 
- ROBOT = 'R112';
+% ROBOT = '?'
 
 %% 3.  TEST IF ROBOT GOES STRAIGHT (NO LINE FOLLOWING YET)
 % First, make sure the battery pack is plugged in and is on.  If the
@@ -218,15 +218,15 @@ whiteThresh = '?'; % Max value detected for all white
 
 % The base duty cycle "speed" you wish to travel down the line 
 % (recommended value is 9)
-motorBaseSpeed = 9;
+motorBaseSpeed = '?';
 
 tic % start time
 
 % Use a higher duty cycle for a very brief moment to overcome the gearbox 
 % force of static friction 
 % (recommendation: 10, with mOffScale if needed)
-nb.setMotor(1, 10);
-nb.setMotor(2, 10);
+nb.setMotor(1, '?');
+nb.setMotor(2, '?');
 pause(0.03);
 
 while (toc < 5)  % Adjust me if you want to stop your line following 
@@ -260,7 +260,7 @@ while (toc < 5)  % Adjust me if you want to stop your line following
 
     % Calculate the three errors to be used in the PID control 
     
-    error = -3*val - 2*vals(2) - 1*vals(3)+1*vals(4) +2*vals(); % Designing this error term can sometimes be just as 
+    error = '?'; % Designing this error term can sometimes be just as 
                  % important as the tuning of the feedback loop (how you  
                  % set the PID controller output). In the last lab, this  
                  % error was a simple difference between two values (RPM  
@@ -270,10 +270,9 @@ while (toc < 5)  % Adjust me if you want to stop your line following
                  % Sensors 5 lab. Don't forget here to use the calibrated 
                  % values to calculate the error.  
 
-    integral = integral +error*dt;
-    
+    integral = '?';
 
-    derivative = (error -preverror*dt);
+    derivative = '?';
 
     % Create your PID controller output here using the previously defined 
     % gain values and the three errors computed above. 
@@ -299,10 +298,9 @@ while (toc < 5)  % Adjust me if you want to stop your line following
         % should make minor adjustments that allow the robot to stay 
         % centered on the line as it moves. These should be equations and
         % not just numbers:
-        m1Duty = motor1BaseSpeed -control;
-        m2Duty = motor2BaseSpeed - control;
+        m1Duty = '?';
+        m2Duty = '?';
 
-        RightMotorDuty = motor1BaseSpeed - control;
         nb.setMotor(1, m1Duty);
         nb.setMotor(2, m2Duty);
     end
